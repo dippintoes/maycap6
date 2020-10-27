@@ -1,0 +1,42 @@
+#include <iostream>
+#include<conio.h>
+#include <iomanip>
+using namespace std;
+
+class mytime
+{
+private:
+    int hr,mn,sec,seconds;
+public:
+    void get(void);
+    void convert(void);
+    void display(void);
+};
+void mytime::get(void)
+{
+    cout<<"Enter time:"<<"\n";
+    cout<<"Hours?  ";
+    cin>>hr;
+    cout<<"Minutes? ";
+    cin>>mn;
+    cout<<"Seconds? ";
+    cin>>sec;
+}
+void mytime::convert(void)
+{
+    seconds = hr*3600+mn*60+sec;
+}
+void mytime::display(void)
+{
+    cout<<"The time is = "<<setw(2)<<setfill('0')<<hr<<":"<<setw(2)<<setfill('0')<<mn<<":"<<setw(2)<<setfill('0')<<sec<<"\n";
+    cout<<"Time in total seconds: "<<seconds;
+}
+int main()
+{
+    mytime t;
+
+    t.get();
+    t.convert();
+    t.display();
+    return 0;
+}
